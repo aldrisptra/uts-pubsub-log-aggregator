@@ -176,7 +176,5 @@ Link GitHub: https://github.com/aldrisptra/uts-pubsub-log-aggregator.git
 
 ## Video Demo
 
-Link video demo YouTube:
-
 Link yt: https://youtu.be/k_7W8cQ-Ylo?si=2rhzZBJ53SQ1vSzx
 ```
