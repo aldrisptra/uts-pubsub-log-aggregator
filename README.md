@@ -170,6 +170,10 @@ Artinya event diterima dua kali, tetapi hanya diproses satu kali karena consumer
 - `unique_processed` dan daftar event unik dihitung dari SQLite sehingga tetap tersedia setelah restart.
 - Semua komponen berjalan lokal dan tidak menggunakan layanan eksternal.
 
+## Repository
+
+Link GitHub: https://github.com/aldrisptra/uts-pubsub-log-aggregator.git
+
 ## Video Demo
 
 Link video demo YouTube:
