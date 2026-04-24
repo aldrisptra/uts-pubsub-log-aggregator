@@ -143,6 +143,10 @@ Eventual consistency berarti sistem tidak harus selalu langsung konsisten pada s
 
 Metrik evaluasi yang relevan untuk Pub-Sub log aggregator meliputi throughput, latency, duplicate rate, jumlah event unik, error rate, dan recovery setelah restart. Throughput menunjukkan jumlah event yang dapat diterima atau diproses per satuan waktu. Pada tugas ini, sistem diuji dengan 5.000 event dan minimal 20% duplikasi untuk memastikan aggregator tetap responsif. Latency menunjukkan waktu dari event diterima sampai event selesai diproses dan tersedia melalui `GET /events`. Duplicate rate menunjukkan proporsi event yang dibuang karena memiliki `(topic, event_id)` yang sama. Metrik `received`, `unique_processed`, dan `duplicate_dropped` pada endpoint `GET /stats` dirancang untuk mengamati perilaku tersebut. Recovery setelah restart juga penting untuk mengevaluasi apakah dedup store benar-benar durable. Desain SQLite dipilih untuk menjaga data event unik tetap tersedia setelah container restart, sedangkan runtime stats seperti `received` dan `duplicate_dropped` dapat reset karena disimpan di memory. Metrik-metrik ini berkaitan dengan keputusan desain pada Bab 1–7, terutama scalability, communication, fault tolerance, dan consistency (Tanenbaum & Van Steen, 2007).
 
+## Link Video Demo
+
+Link yt: https://youtu.be/k_7W8cQ-Ylo?si=2rhzZBJ53SQ1vSzx
+
 ## 7. Referensi
 
 Tanenbaum, A. S., & Van Steen, M. (2007). _Distributed systems: Principles and paradigms_. Pearson Prentice Hall.
