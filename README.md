@@ -179,5 +179,5 @@ Link GitHub: https://github.com/aldrisptra/uts-pubsub-log-aggregator.git
 Link video demo YouTube:
 
 ```text
-TODO: masukkan link video demo di sini
+https://youtu.be/k_7W8cQ-Ylo?si=2rhzZBJ53SQ1vSzx
 ```

@@ -107,6 +107,8 @@ Cakupan test meliputi:
 
 Pada stress test, sistem menerima 5.000 event dengan 4.000 event unik dan 1.000 duplikasi. Hasil yang diharapkan adalah `received = 5000`, `unique_processed = 4000`, dan `duplicate_dropped = 1000`.
 
+Pada pengujian Docker Compose, service `publisher` mengirim 5.000 event ke service `aggregator` melalui jaringan internal Compose. Event terdiri dari 4.000 event unik dan 1.000 event duplikat. Setelah proses selesai dan container aggregator dijalankan ulang, endpoint `/stats` menunjukkan `unique_processed = 4000`, sedangkan `GET /events?topic=app.compose` mengembalikan 4.000 event. Hal ini menunjukkan bahwa SQLite dedup store tetap persisten setelah restart container.
+
 ## 6. Jawaban Teori T1–T8
 
 ### T1 — Karakteristik Sistem Terdistribusi dan Trade-off Pub-Sub Log Aggregator
