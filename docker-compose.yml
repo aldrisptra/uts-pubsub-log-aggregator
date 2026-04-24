@@ -1,0 +1,30 @@
+services:
+  aggregator:
+    build: .
+    container_name: uts-aggregator
+    ports:
+      - "8080:8080"
+    volumes:
+      - aggregator-data:/app/data
+    networks:
+      - localnet
+
+  publisher:
+    build: .
+    container_name: uts-publisher
+    depends_on:
+      - aggregator
+    environment:
+      - AGGREGATOR_URL=http://aggregator:8080
+      - TOTAL_EVENTS=5000
+      - DUPLICATE_RATIO=0.2
+    command: ["python", "-m", "src.publisher"]
+    networks:
+      - localnet
+
+volumes:
+  aggregator-data:
+
+networks:
+  localnet:
+    driver: bridge
